@@ -30,6 +30,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+# Flameshot
+bindsym $mod+Shift+p exec maim -u ~/$(date +%s).png
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -174,6 +177,10 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Compton
+exec_always --no-startup-id compton -b
+
+
 # Borders
 default_border none
 default_floating_border none
@@ -183,7 +190,7 @@ gaps outer 0
 
 
 #Wallpaper
-exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
+exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper3.jpg
 
 #Window Colors
 set $bg-color 	         #404552
@@ -194,7 +201,7 @@ set $urgent-bg-color     #E53935
 
 # window colors
 #                       border              background         text                 indicator	child-border
-client.focused          $bg-color           $bg-color	       $inactive-text-color #693C3C	#241A1A
+client.focused          $bg-color           $bg-color	       $inactive-text-color #693C3C	#505050
 client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #693C3C	#000000
 client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #693C3C	#000000
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #693C3C	#000000
@@ -204,27 +211,49 @@ hide_edge_borders both
 
 # i3 gaps shit
 for_window [class="^.*"] border pixel 3
-gaps inner 5
-gaps outer 5
+gaps inner 10
+gaps outer 40
 #smart_gaps on
 #smart_borders on
 
+#polybar setup
+bar {
+        status_command polybar example
+        tray_output primary
+        position bottom
+	mode invisible
 
+
+        colors {
+            background $bg-color
+            separator #757575
+            #                  border             background         text
+            focused_workspace  $bg-color          $bg-color
+$text-color
+            inactive_workspace $inactive-bg-color $inactive-bg-color
+$inactive-text-color
+            urgent_workspace   $urgent-bg-color   $urgent-bg-color
+$text-color
+        }
+}
+
+bindsym $mod+p exec "xdotool search --class Polybar windowunmap %@"
+bindsym $mod+o exec "xdotool search --class Polybar windowmap %@ windowraise %@"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3blocks
-	position top
-	colors {
-		background $bg-color
-	    	separator #757575
-#               border             background         text
-                focused_workspace  $bg-color          $bg-color          $text-color
-                inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-                urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-	}
-}
+#bar {
+#        status_command i3blocks
+#	position top
+#	colors {
+#		background $bg-color
+#	    	separator #757575
+##               border             background         text
+#                focused_workspace  $bg-color          $bg-color          $text-color
+#                inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+#                urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+#	}
+#}
 
 
 #Lock
