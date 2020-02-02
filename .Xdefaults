@@ -13,14 +13,18 @@ Xft.hintstyle:              hintslight
 URxvt*transparent: true
 
 # Shading (0-99=>darken; 101-200=>lighten).
-URxvt*shading: 30
+URxvt*shading: 55
 
 # How many lines to save.
 URxvt*saveLines: 1200
 
-# Foreground/background colors. (Transparency seems to negate the background color)
+# Blur and Tint
+urxvt*tintColor: #bbcfea
+urxvt*blurRadius: 10
+
+# Foreground/background colors. (Transparency seems to negate the background color?)
 URxvt*foreground: #00ff00
-URxvt*background: #000000
+URxvt.background: rgba:0000/0000/0200/c80
 
 # Source Code Pro font.
 URxvt*font: xft:Source Code Pro:pixelsize=14:antialias=true:hinting=true
@@ -38,9 +42,6 @@ URxvt.keysym.Control-Right: \033[1;5C
 
 # Color settings 
 
-
-*background: #002b36
-*foreground: #586e75
 !!*fading: 40
 *fadeColor: #002b36
 *cursorColor: #22ff22
@@ -65,7 +66,5 @@ URxvt.keysym.Control-Right: \033[1;5C
 *color13: #6c71c4
 *color14: #22aaff
 *color15: #71928a
-
-
 
 
