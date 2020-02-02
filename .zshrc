@@ -16,6 +16,11 @@ ZSH_THEME="gianu"
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
+# Import colorscheme from 'wal' asynchronously
+# &   # Run the process in the background.
+# ( ) # Hide shell job control messages.
+(wal -i ~/Pictures/wallpaper3.jpg)
+clear
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
