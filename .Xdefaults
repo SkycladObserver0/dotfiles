@@ -1,5 +1,6 @@
 # --[ Xft Settings ]--
 
+
 # Quality settings.
 Xft.dpi:                    96
 Xft.antialias:              true
@@ -10,25 +11,24 @@ Xft.hintstyle:              hintslight
 # --[ urxvt Settings ]--
 
 # Set transparency.
-URxvt*transparent: true
+URxvt*transparent: false
 
 # Shading (0-99=>darken; 101-200=>lighten).
-URxvt*shading: 55
+URxvt*shading: 00
 
 # How many lines to save.
 URxvt*saveLines: 1200
 
 # Blur and Tint
-urxvt*tintColor: #bbcfea
-urxvt*blurRadius: 10
+urxvt*tintColor: #000000
+urxvt*blurRadius: 0
 
 # Foreground/background colors. (Transparency seems to negate the background color?)
-URxvt*foreground: #00ff00
-URxvt.background: rgba:0000/0000/0200/c80
-
+#URxvt*foreground: #98c279
+#URxvt.background: #060a12
 # Source Code Pro font.
-URxvt*font: xft:Source Code Pro:pixelsize=14:antialias=true:hinting=true
-URxvt*boldFont: xft:Source Code Pro:bold:pixelsize=14:antialias=true:hinting=true
+URxvt*font: xft:Monospace:pixelsize=14:antialias=true:hinting=true
+URxvt*boldFont: xft:Monospace:bold:pixelsize=14:antialias=true:hinting=true
 
 # Disable scrollbar.
 URxvt*scrollBar: false
@@ -39,32 +39,51 @@ URxvt.keysym.Control-Up:    \033[1;5A
 URxvt.keysym.Control-Left:  \033[1;5D
 URxvt.keysym.Control-Right: \033[1;5C
 
+# Border
+URxvt.internalBorder:  10
 
-# Color settings 
+# Color settings
 
-!!*fading: 40
-*fadeColor: #002b36
+*fading: 10
+*fadeColor: #000000
 *cursorColor: #22ff22
 *pointerColorBackground: #586e75
 *pointerColorForeground: #bbbbff
 
+! special
+*.foreground:   #97ffd6
+*.background:   #0d0912
+*.cursorColor:  #dd97ff
+
+! black
+*.color0:       #27282f
+*.color8:       #3a3f46
+
+! red
+*.color1:       #ff391c
+*.color9:       #ff5144
+
+! green
+*.color2:       #9fec47
+*.color10:      #b0ef6d
+
+! yellow
+*.color3:       #f6762c
+*.color11:      #f2984c
+
+! blue
+*.color4:       #34aaf0
+*.color12:      #8dbfea
+
+! magenta
+*.color5:       #bd25ef
+*.color13:      #de77fd
+
+! cyan
+*.color6:       #36eed6
+*.color14:      #8af4e6
+
+! white
+*.color7:       #efd0f6
+*.color15:      #bd9ec6
 # Colors
-
-*color0: #073642
-*color1: #dc322f
-*color2: #859900
-*color3: #b58900
-*color4: #268bd2
-*color5: #d33682
-*color6: #2aa198
-*color8: #002b36
-*color9: #cb4b16
-*color7: #eee8d5
-*color10: #586e75
-*color11: #657b83
-*color12: #839496
-*color13: #6c71c4
-*color14: #22aaff
-*color15: #71928a
-
-
